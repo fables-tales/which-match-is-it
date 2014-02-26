@@ -21,4 +21,10 @@ the number of matches
 the current match number
 ```
 
-CAN YOU BELIEVE IT'S THAT SIMPLE
+
+##But what if there's a delay?
+
+config.yml has a current delay value, which is seconds. Set it based on how
+behind we are, watch get dealt with disappear.
+
+**CAN YOU BELIEVE IT'S THAT SIMPLE**
