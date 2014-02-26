@@ -15,7 +15,7 @@ class ConfigReader:
         return total
 
     def current_match(self):
-        t = datetime.datetime.now()
+        t = datetime.datetime.now() - datetime.timedelta(0, self.loaded_data["current_delay"])
         i = 0
         match = self.loaded_data["match_sets"][i]
         while t > match["end_time"]:
