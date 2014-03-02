@@ -2,6 +2,7 @@
 import os
 
 from flask import Flask
+import json
 from matches import ConfigReader
 from who import CurrentMatcher
 import yaml
@@ -22,14 +23,14 @@ def current_match():
 def read_match_number(match_number):
     if match_number != -1:
         cm = CurrentMatcher(open("config.yml").read())
-        return yaml.dump(
+        return json.dumps(
             {
                 "arena_0": cm.whos_in(match_number, "arena_0"),
                 "arena_1": cm.whos_in(match_number, "arena_1")
             }
         )
     else:
-        return yaml.dump({})
+        return json.dumps({})
 
 def current_match_number():
     return int(ConfigReader(open("config.yml").read()).current_match())
