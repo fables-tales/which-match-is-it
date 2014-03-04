@@ -12,6 +12,9 @@ except ImportError:
 MatchPeriod = namedtuple("MatchPeriod",
                          ["start_time","end_time"])
 
+Match = namedtuple("Match",
+                   ["num", "arena", "teams"])
+
 class MatchSchedule(object):
     def __init__(self, config_fname):
         with open(config_fname, "r") as f:
@@ -24,7 +27,14 @@ class MatchSchedule(object):
 
         self.match_period = y["match_period_length_seconds"]
         self.current_delay = datetime.timedelta(0, y["current_delay"])
-        self.matches = y["matches"]
+
+        self.matches = {}
+        for num, info in y["matches"].iteritems():
+            self.matches[num] = {}
+
+            for arena_name, teams in info.iteritems():
+                match = Match(num, arena_name, teams)
+                self.matches[num][arena_name] = match
 
     def n_matches(self):
         total = 0
@@ -51,7 +61,7 @@ class MatchSchedule(object):
         partial = MatchPeriod(period.start_time,t)
         match_num += self.matches_in_period(partial)
 
-        return match_num
+        return self.matches[match_num]
 
     def matches_in_period(self, period):
         return (period.end_time - period.start_time).seconds/self.match_period

@@ -12,5 +12,5 @@ if len(sys.argv) != 2:
 
 cm = MatchSchedule(CONFIG_FNAME)
 match_number = int(sys.argv[1])
-print "Teams in arena 0:", cm.whos_in(match_number, "arena_0")
-print "Teams in arena 1:", cm.whos_in(match_number, "arena_1")
+print "Teams in arena 0:", cm.matches[match_number]["arena_0"].teams
+print "Teams in arena 1:", cm.matches[match_number]["arena_1"].teams

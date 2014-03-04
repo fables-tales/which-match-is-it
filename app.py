@@ -25,12 +25,13 @@ def current_match():
 def read_match_number(match_number):
     if match_number != -1:
         cm = get_schedule()
-        return json.dumps(
-            {
-                "arena_0": cm.whos_in(match_number, "arena_0"),
-                "arena_1": cm.whos_in(match_number, "arena_1")
-            }
-        )
+        m = cm.matches[match_number]
+
+        r = {}
+        for match in m.values():
+            r[match.arena] = match.teams
+
+        return json.dumps(r)
     else:
         return json.dumps({})
 
