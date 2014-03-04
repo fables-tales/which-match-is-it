@@ -35,24 +35,23 @@ class MatchSchedule(object):
 
     def current_match(self):
         t = datetime.datetime.now() - self.current_delay
-        i = 0
-        match = self.match_periods[i]
-        while t > match.end_time:
-            i += 1
-            match = self.match_periods[i]
+        match_num = 0
 
-        if t < match.start_time:
-            return -1
-        else:
-            total = 0
-            for j in xrange(0, i):
-                match = self.match_periods[j]
-                total += self.matches_in_period(match)
+        # Find the period that we are currently int
+        for period in self.match_periods:
+            if t < period.end_time:
+                break
+            match_num += self.matches_in_period(period)
 
-            total += self.matches_in_period(MatchPeriod(self.match_periods[i].start_time,
-                                                        t))
+        if t < period.start_time:
+            "We're before the beginning of the competition"
+            return None
 
-            return total
+        # Partial period from beginning of current period until now
+        partial = MatchPeriod(period.start_time,t)
+        match_num += self.matches_in_period(partial)
+
+        return match_num
 
     def matches_in_period(self, period):
         return (period.end_time - period.start_time).seconds/self.match_period
