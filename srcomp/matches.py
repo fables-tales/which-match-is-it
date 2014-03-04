@@ -23,7 +23,7 @@ class MatchSchedule(object):
                                                  e["end_time"]))
 
         self.match_period = y["match_period_length_seconds"]
-        self.current_delay = y["current_delay"]
+        self.current_delay = datetime.timedelta(0, y["current_delay"])
         self.matches = y["matches"]
 
     def n_matches(self):
@@ -34,7 +34,7 @@ class MatchSchedule(object):
         return total
 
     def current_match(self):
-        t = datetime.datetime.now() - datetime.timedelta(0, self.current_delay)
+        t = datetime.datetime.now() - self.current_delay
         i = 0
         match = self.match_periods[i]
         while t > match.end_time:
