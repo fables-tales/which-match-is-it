@@ -65,6 +65,3 @@ class MatchSchedule(object):
 
     def matches_in_period(self, period):
         return (period.end_time - period.start_time).seconds/self.match_period
-
-    def whos_in(self, match_number, arena_id):
-        return self.matches[match_number][arena_id]
