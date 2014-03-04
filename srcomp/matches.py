@@ -4,8 +4,10 @@ import time
 import yaml
 
 class MatchSchedule(object):
-    def __init__(self, text):
-        self.loaded_data = yaml.load(text)
+    def __init__(self, config_fname):
+        with open(config_fname, "r") as f:
+            self.loaded_data = yaml.load(f.read())
+
         self.match_period = self.loaded_data["match_period_length_seconds"]
 
     def n_matches(self):

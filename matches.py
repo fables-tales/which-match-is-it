@@ -1,4 +1,10 @@
+import os
 from srcomp.matches import MatchSchedule
 
-print "total match period:", MatchSchedule(open("config.yml").read()).n_matches()
-print "current match is:", MatchSchedule(open("config.yml").read()).current_match()
+CONFIG_FNAME = os.path.join(os.path.dirname(__file__),
+                            "config.yml")
+
+sched = MatchSchedule(CONFIG_FNAME)
+
+print "total match period:", sched.n_matches()
+print "current match is:", sched.current_match()

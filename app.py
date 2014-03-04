@@ -4,10 +4,13 @@ from flask import Flask
 import json
 from srcomp.matches import MatchSchedule
 
+CONFIG_FNAME = os.path.join(os.path.dirname(__file__),
+                            "config.yml")
+
 app = Flask(__name__)
 
 def get_schedule():
-    return MatchSchedule(open("config.yml").read())
+    return MatchSchedule(CONFIG_FNAME)
 
 @app.route('/n_matches')
 def n_matches():
