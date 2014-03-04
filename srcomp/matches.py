@@ -13,7 +13,7 @@ MatchPeriod = namedtuple("MatchPeriod",
                          ["start_time","end_time"])
 
 Match = namedtuple("Match",
-                   ["num", "arena", "teams"])
+                   ["num", "arena", "teams", "start_time", "end_time"])
 
 class MatchSchedule(object):
     def __init__(self, config_fname):
@@ -25,7 +25,7 @@ class MatchSchedule(object):
             self.match_periods.append(MatchPeriod(e["start_time"],
                                                  e["end_time"]))
 
-        self.match_period = y["match_period_length_seconds"]
+        self.match_period = datetime.timedelta(0, y["match_period_length_seconds"])
         self.current_delay = datetime.timedelta(0, y["current_delay"])
 
         self.matches = {}
@@ -33,8 +33,34 @@ class MatchSchedule(object):
             self.matches[num] = {}
 
             for arena_name, teams in info.iteritems():
-                match = Match(num, arena_name, teams)
+                start_time = self._find_match_start(num)
+                end_time = start_time + self.match_period
+
+                match = Match(num, arena_name, teams, start_time, end_time)
                 self.matches[num][arena_name] = match
+
+    def _find_match_start(self, num):
+        "Find match num's start time"
+        n = 0
+
+        # Find the period this match features in
+        for period in self.match_periods:
+            n += self.matches_in_period(period)
+            if num < n:
+                "Match is in this period"
+                break
+
+        if num >= n:
+            "This match never starts"
+            return None
+
+        # Number of the first match in the period:
+        period_first_match = n - self.matches_in_period(period)
+
+        # Offset of this match within this period
+        offset_in_period = num - period_first_match
+
+        return period.start_time + (offset_in_period * self.match_period)
 
     def n_matches(self):
         total = 0
@@ -64,4 +90,4 @@ class MatchSchedule(object):
         return self.matches[match_num]
 
     def matches_in_period(self, period):
-        return (period.end_time - period.start_time).seconds/self.match_period
+        return (period.end_time - period.start_time).seconds/self.match_period.seconds
