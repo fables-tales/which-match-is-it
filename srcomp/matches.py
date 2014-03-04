@@ -3,10 +3,15 @@ import datetime
 import time
 import yaml
 
+try:
+    from yaml import CLoader as YAML_Loader
+except ImportError:
+    from yaml import Loader as YAML_Loader
+
 class MatchSchedule(object):
     def __init__(self, config_fname):
         with open(config_fname, "r") as f:
-            self.loaded_data = yaml.load(f.read())
+            self.loaded_data = yaml.load(f.read(), Loader = YAML_Loader)
 
         self.match_period = self.loaded_data["match_period_length_seconds"]
 
