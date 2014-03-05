@@ -1,14 +1,35 @@
 #!/usr/bin/env python
 import os
-from flask import Flask, jsonify, json
+from flask import g, Flask, jsonify, json
 from srcomp import SRComp
+import time
 
 ROOTDIR = os.path.dirname(__file__)
 
 app = Flask(__name__)
 
-def get_comp():
-    return SRComp(ROOTDIR)
+class SRCompManager(object):
+    def __init__(self, *args, **kw):
+        self.args = args
+        self.kw = kw
+        self._load()
+
+    def _load(self):
+        self.comp = SRComp(*self.args, **self.kw)
+        self.update_time = time.time()
+
+    def get_comp(self):
+        if time.time() - self.update_time > 5:
+            "Data is more than 5 seconds old -- reload"
+            self._load()
+
+        return self.comp
+
+comp_man = SRCompManager(ROOTDIR)
+
+@app.before_request
+def before_request():
+    g.comp_man = comp_man
 
 def match_json_info(match):
     return {
@@ -22,7 +43,7 @@ def match_json_info(match):
 @app.route("/matches/<arena>/<int:match_number>")
 def match_info(arena, match_number):
     "Get information about the given match number"
-    comp = get_comp()
+    comp = g.comp_man.get_comp()
 
     if match_number not in comp.schedule.matches:
         return jsonify(error=True,msg="Invalid match number"), 404
@@ -37,7 +58,7 @@ def match_info(arena, match_number):
 @app.route("/matches/<arena>/<int:match_number_min>-<int:match_number_max>")
 def match_info_range(arena, match_number_min, match_number_max):
     "Get information about the given range of matches"
-    comp = get_comp()
+    comp = g.comp_man.get_comp()
     resp = {}
 
     for match_n in range(match_number_min, match_number_max+1):
@@ -51,7 +72,7 @@ def match_info_range(arena, match_number_min, match_number_max):
 
 @app.route("/matches/<arena>/current")
 def current_match_info(arena):
-    comp = get_comp()
+    comp = g.comp_man.get_comp()
     current = comp.schedule.current_match()
 
     if current is None:
