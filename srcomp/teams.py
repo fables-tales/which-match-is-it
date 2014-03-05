@@ -13,7 +13,6 @@ Team = namedtuple("Team",
 def load_teams(fname):
     "Load teams from a YAML file"
 
-    print fname
     with open(fname, "r") as f:
         y = yaml.load(f, Loader = YAML_Loader)
 
