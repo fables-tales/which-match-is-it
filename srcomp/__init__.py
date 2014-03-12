@@ -1,2 +1,0 @@
-from comp import SRComp
-
