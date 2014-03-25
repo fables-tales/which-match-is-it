@@ -1,0 +1,121 @@
+##zero?
+SWI | KHS | PAG | BDF | x | BGS | BAY | TBG
+CLF | SGS | RWD | CPR | RUN | GRD | STA | HZW
+GYG | KDE | WYC | BRK | MAI | TTN | BWS | KES
+RGS | BPV | CGS | HYP | MAI2 | QEH | MEA | BRN
+MFG | NHS | LFG | ICE | x | HAM | PAS | HRS
+GRS | SCC | RED | SEN | QMS | CCR | HSO | CRB
+EMM | CLY | LSS | TWG | DSF | JMS | PSC | QMC
+# r1
+CLF | BGS | PAG | GRD | SWI | KHS | TBG | CPR
+GYG | SGS | TTN | HZW | MAI | RUN | BRK | RWD
+x | BPV | MEA | CGS | RGS | KES | BDF | HYP
+KDE | x | MFG | BRN | WYC | BAY | MAI2 | ICE
+CCR | SEN | NHS | GRS | HAM | HSO | SCC | HRS
+QMC | PAS | CLY | RED | DSF | QMS | EMM | CRB
+JMS | BWS | STA | TWG | LFG | PSC | QEH | LSS
+# r2
+SWI | SGS | CPR | RWD | GYG | RUN | PAG | HZW
+CLF | TTN | BPV | BRK | MAI | KHS | GRD | BDF
+x | KDE | BAY | MFG | x | WYC | MAI2 | RGS
+GRS | ICE | MEA | KES | HYP | SEN | HRS | CCR
+SCC | NHS | PAS | BRN | QMC | HSO | CGS | BGS
+JMS | HAM | EMM | QEH | PSC | CLY | STA | CRB
+QMS | BWS | LSS | RED | DSF | LFG | TWG | TBG
+# r3
+CLF | TTN | PAG | HZW | GYG | MAI | GRD | CPR
+KDE | RGS | MAI2 | RWD | x | KHS | RUN | WYC
+HYP | MFG | MEA | SEN | x | BAY | GRS | CCR
+SWI | BGS | HRS | BPV | SGS | SCC | KES | CGS
+JMS | HSO | PAS | BDF | PSC | CLY | EMM | ICE
+LFG | RED | STA | TWG | QMS | QMC | HAM | NHS
+TBG | QEH | BWS | CRB | DSF | LSS | BRN | BRK
+# r4
+CLF | KHS | RUN | MAI2 | x | HZW | WYC | RWD
+BAY | CPR | TTN | SEN | x | GRS | GRD | HYP
+SWI | MFG | SCC | KES | GYG | BGS | MEA | CCR
+KDE | PSC | ICE | HSO | MAI | EMM | PAS | BPV
+SGS | LFG | CLY | HAM | QMS | JMS | CGS | TWG
+QMC | PAG | QEH | RED | DSF | NHS | LSS | BDF
+RGS | BRN | STA | CRB | TBG | BWS | BRK | HRS
+# r5
+KHS | BAY | RWD | x | HYP | RUN | MAI2 | CPR
+SWI | GYG | TTN | MEA | x | CLF | GRD | SCC
+BGS | MFG | EMM | PSC | HZW | HSO | BPV | GRS
+QMS | CLY | PAS | SEN | JMS | LFG | WYC | KES
+SGS | RED | BDF | CGS | QMC | LSS | TWG | CCR
+KDE | DSF | HAM | CRB | RGS | QEH | ICE | BWS
+PAG | HRS | STA | BRK | MAI | NHS | BRN | TBG
+# r6
+CLF | BAY | SCC | MEA | x | SWI | MAI2 | GRD
+BGS | TTN | HSO | RWD | GYG | KHS | MFG | PSC
+JMS | LFG | BPV | CPR | QMS | HYP | WYC | HZW
+CLY | BDF | CGS | CCR | QMC | RUN | LSS | SGS
+KDE | EMM | RED | KES | DSF | x | QEH | SEN
+RGS | NHS | PAS | BRK | GRS | HRS | TWG | CRB
+MAI | ICE | STA | TBG | HAM | PAG | BWS | BRN
+# r7
+GYG | MFG | HSO | GRD | CLF | SWI | BAY | PSC
+BGS | LFG | MAI2 | TTN | x | JMS | RWD | HYP
+CCR | CPR | CLY | HZW | QMS | RUN | SCC | BDF
+SGS | EMM | MEA | x | KDE | KHS | BPV | KES
+WYC | PAS | BRK | CRB | NHS | QEH | HRS | TWG
+STA | ICE | BRN | SEN | HAM | TBG | LSS | RED
+MAI | QMC | BWS | CGS | DSF | RGS | PAG | GRS
+# r8
+CLF | GYG | SWI | x | HYP | TTN | HSO | GRD
+BGS | RUN | CLY | CPR | MFG | MAI2 | BDF | HZW
+JMS | BAY | SGS | CCR | KDE | x | SCC | BPV
+KHS | NHS | EMM | BRK | PAS | QEH | KES | TWG
+LSS | CRB | ICE | SEN | QMS | HRS | BRN | RED
+PAG | WYC | CGS | TBG | MAI | DSF | HAM | PSC
+QMC | LFG | GRS | STA | RGS | BWS | MEA | RWD
+# r9
+CLY | MFG | GRD | HZW | x | BGS | BDF | CPR
+SWI | SGS | SCC | CCR | GYG | JMS | RUN | BPV
+KHS | BAY | HSO | TWG | KDE | HYP | QEH | CLF
+MAI2 | KES | BRK | SEN | TTN | NHS | RED | CRB
+DSF | HRS | CGS | ICE | MAI | x | PAG | LSS
+QMS | HAM | STA | MEA | RGS | LFG | EMM | TBG
+QMC | WYC | BRN | RWD | PSC | PAS | BWS | GRS
+# r10
+MFG | CCR | RUN | BPV | JMS | GRD | BGS | SGS
+KHS | CPR | SCC | HYP | SWI | QEH | HSO | CLY
+GYG | NHS | MAI2 | RED | BAY | BDF | BRK | CRB
+CLF | KES | LSS | HRS | x | x | TTN | ICE
+QMS | RGS | PAG | MEA | MAI | KDE | LFG | HZW
+HAM | WYC | BWS | SEN | PSC | TWG | BRN | CGS
+GRS | EMM | STA | RWD | DSF | QMC | PAS | TBG
+# r11
+SWI | MFG | HSO | RUN | BGS | CLY | BPV | SCC
+GYG | HYP | BAY | CRB | GRD | MAI2 | QEH | CCR
+x | SGS | NHS | KES | x | ICE | BRK | JMS
+CLF | MAI | RED | RGS | LFG | HRS | MEA | HZW
+KHS | LSS | CGS | SEN | TTN | PSC | WYC | BDF
+QMS | GRS | BRN | TBG | QMC | HAM | TWG | RWD
+KDE | PAG | PAS | STA | DSF | EMM | BWS | CPR
+# r12
+QEH | BAY | GRD | RUN | MAI2 | CCR | SCC | CRB
+BGS | ICE | HYP | SGS | GYG | x | CLY | KES
+SWI | JMS | BRK | HZW | MAI | HSO | RED | MEA
+WYC | LSS | BPV | HRS | x | RGS | PSC | SEN
+KHS | TTN | QMC | TBG | QMS | LFG | CGS | RWD
+MFG | PAG | HAM | TWG | DSF | NHS | BWS | STA
+CLF | EMM | BRN | BDF | KDE | GRS | PAS | CPR
+# r13
+x | RUN | KES | CRB | GYG | QEH | SCC | BGS
+HYP | CLY | MEA | BRK | SWI | JMS | ICE | RED
+MAI | SGS | HRS | x | RGS | BAY | LSS | HZW
+QMS | KHS | TTN | PSC | TBG | SEN | GRD | RWD
+DSF | PAG | MAI2 | BPV | NHS | WYC | STA | HSO
+QMC | MFG | BRN | CPR | CLF | LFG | GRS | HAM
+EMM | PAS | CGS | CCR | KDE | BWS | BDF | TWG
+# r14
+BGS | RED | BRK | HYP | SWI | x | RUN | MEA
+x | CRB | QEH | HZW | MAI | BAY | CLY | KES
+JMS | RGS | HRS | KHS | TTN | SCC | LSS | TBG
+GYG | PAG | ICE | RWD | QMS | NHS | GRD | BPV
+DSF | CLF | HSO | WYC | HAM | PSC | STA | CPR
+LFG | BRN | BDF | CCR | MFG | GRS | BWS | CGS
+KDE | QMC | EMM | SEN | SGS | PAS | MAI2 | TWG
+#
