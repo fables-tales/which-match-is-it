@@ -1,19 +1,16 @@
 #!/usr/bin/env python
-import yaml
+import os
+from srcomp.matches import MatchSchedule
 import sys
 
-class CurrentMatcher:
-    def __init__(self, match_schedule):
-        self.matches = yaml.load(match_schedule)["matches"]
+CONFIG_FNAME = os.path.join(os.path.dirname(__file__),
+                            "config.yml")
 
-    def whos_in(self, match_number, arena_id):
-        return self.matches[match_number][arena_id]
+if len(sys.argv) != 2:
+    print "Usage is ./who.py <match_number>"
+    exit(1)
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print "Usage is ./who.py <match_number>"
-    else:
-        cm = CurrentMatcher(open("config.yml").read())
-        match_number = int(sys.argv[1])
-        print "Teams in arena 0:", cm.whos_in(match_number, "arena_0")
-        print "Teams in arena 1:", cm.whos_in(match_number, "arena_1")
+cm = MatchSchedule(CONFIG_FNAME)
+match_number = int(sys.argv[1])
+print "Teams in arena 0:", cm.matches[match_number]["arena_0"].teams
+print "Teams in arena 1:", cm.matches[match_number]["arena_1"].teams

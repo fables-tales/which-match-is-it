@@ -1,0 +1,164 @@
+# All the teams
+teams:
+  BAY:
+    name: "Bay House School & Sixth Form"
+
+  BDF:
+    name: "Bedford School"
+
+  BGS:
+    name: "Bristol Grammar School"
+
+  BPV:
+    name: "Barton Peveril College"
+
+  BRK:
+    name: "Brockenhurst College"
+
+  BRN:
+    name: "St Brendan's Sixth Form College"
+
+  BWS:
+    name: "Bishop Wordsworth School"
+
+  CCR:
+    name: "Cirencester College"
+
+  CGS:
+    name: "Colston's Girls' School"
+
+  CLF:
+    name: "Clifton High School"
+
+  CLY:
+    name: "Collyers Sixth Form College"
+
+  CPR:
+    name: "The Cooper School"
+
+  CRB:
+    name: "Cranbrook School"
+
+  DSF:
+    name: "Dereham Sixth Form"
+
+  EMM:
+    name: "Lyc\u00e9e Emmanuel Mounier"
+
+  GRD:
+    name: "Gordano School"
+
+  GRS:
+    name: "Greshams School"
+
+  GYG:
+    name: "Guernsey Grammar School"
+
+  HRS:
+    name: "Hills Road Sixth Form College"
+
+  HSO:
+    name: "Headington School"
+
+  HYP:
+    name: "Holt Youth Project"
+
+  HZW:
+    name: "Hazelwick Comprehensive School"
+
+  ICE:
+    name: "Iceni Academy"
+
+  JMS:
+    name: "John Mason School"
+
+  KDE:
+    name: "Kennet District Explorer Scouts"
+
+  KES:
+    name: "King Edward VI School"
+
+  KHS:
+    name: "Kingsbury High School"
+
+  LFG:
+    name: "Lion-Feuchtwanger-Gymnasium"
+
+  LSS:
+    name: "Lawrence Sheriff School"
+
+  MAI:
+    name: "Gymnasium Markt Indersdorf"
+
+  MAI2:
+    name: "Gymnasium Markt Indersdorf"
+
+  MEA:
+    name: "Merchants' Academy"
+
+  MFG:
+    name: "Mirfield Free Grammar"
+
+  NHS:
+    name: "Norwich High School for Girls"
+
+  PAG:
+    name: "Pate's Grammar School"
+
+  PAS:
+    name: "Parmiters School"
+
+  PSC:
+    name: "Peter Symonds College"
+
+  QEH:
+    name: "Queen Elizabeth's Hospital School"
+
+  QMC:
+    name: "Queen Mary's College"
+
+  QMS:
+    name: "Queensmead School"
+
+  RED:
+    name: "Redland Green School"
+
+  RGS:
+    name: "Royal Grammar School, Guildford"
+
+  RUN:
+    name: "Runshaw College"
+
+  RWD:
+    name: "Ringwood School"
+
+  SCC:
+    name: "Southampton City College"
+
+  SEN:
+    name: "Southend High School for Boys"
+
+  SGS:
+    name: "Sutton Grammar School for Boys"
+
+  SRZ:
+    name: "School of SR"
+
+  STA:
+    name: "St Anne's Catholic School"
+
+  SWI:
+    name: "South Wilts Grammar School for Girls"
+
+  TBG:
+    name: "Torquay Boys Grammar School"
+
+  TTN:
+    name: "Tauntons College"
+
+  TWG:
+    name: "Tunbridge Wells Grammar School for Boys"
+
+  WYC:
+    name: "Wymondham College"
+
